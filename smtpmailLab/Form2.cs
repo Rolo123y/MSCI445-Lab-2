@@ -20,22 +20,26 @@ namespace smtpmailLab
         private void button1_Click(object sender, EventArgs e)
         {
             this.password = textBox1.Text;
-            
+
             this.Close();
             MessageBox.Show(password);
         }
         private void button2_Click(object sender, EventArgs e)
         {
             this.password = "MSCI445-Lab4-smtp-Cancelled";
-            
+
             this.Close();
             MessageBox.Show(password);
         }
 
         public String getPassword()
-        {
+        {   
             return this.password;
         }
 
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
