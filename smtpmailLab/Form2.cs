@@ -21,14 +21,14 @@ namespace smtpmailLab
         {
             this.password = textBox1.Text;
             
-            Close();
+            this.Close();
             MessageBox.Show(password);
         }
         private void button2_Click(object sender, EventArgs e)
         {
             this.password = "MSCI445-Lab4-smtp-Cancelled";
             
-            Close();
+            this.Close();
             MessageBox.Show(password);
         }
 

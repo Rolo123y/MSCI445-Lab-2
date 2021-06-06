@@ -95,7 +95,7 @@ namespace smtpmailLab
             String Form_to = ToEmail.Text;
             String Form_subject = SubjectLine.Text;
             String Form_body = EmailBody.Text;
-            String username = "r2nasim"; // YOUR USERNAME
+            String username = "r2nasim"; // YOUR USERNAM
             String password = GetPassword(username);
 
             send_Email(Form_from, Form_to, Form_subject, Form_body, username, password);
