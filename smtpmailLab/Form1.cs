@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Net.Mail;
+using System.Text.RegularExpressions;
 
 namespace smtpmailLab
 {
@@ -49,7 +50,7 @@ namespace smtpmailLab
             try
             {
                 MailMessage msg = new MailMessage();
-                msg.From = new MailAddress(""); //YOUR EMAIL-ADDRESS
+                msg.From = new MailAddress(FromEmail.Text); //YOUR EMAIL-ADDRESS
                 msg.To.Add(ToEmail.Text);
                 msg.Subject = SubjectLine.Text;
                 msg.Body = EmailBody.Text;
@@ -57,8 +58,12 @@ namespace smtpmailLab
                 SmtpClient smt = new SmtpClient("mansci-445.uwaterloo.ca", 587);
                 smt.EnableSsl = false;
 
+                Form2 f2 = new Form2();
+                f2.Show();
+                
+
                 System.Net.NetworkCredential ntcd = new NetworkCredential();
-                ntcd.UserName = ""; // YOUR USERNAME
+                ntcd.UserName = FromEmail.Text.Split("@")[0]; // YOUR USERNAME
                 ntcd.Password = ""; // YOUR PASSWORD
 
                 smt.Credentials = ntcd;
