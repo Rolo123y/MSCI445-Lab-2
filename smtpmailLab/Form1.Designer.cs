@@ -38,6 +38,7 @@ namespace smtpmailLab
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.EmailReporter = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // ToEmail
@@ -45,36 +46,36 @@ namespace smtpmailLab
             this.ToEmail.Location = new System.Drawing.Point(165, 72);
             this.ToEmail.Multiline = true;
             this.ToEmail.Name = "ToEmail";
-            this.ToEmail.Size = new System.Drawing.Size(197, 28);
+            this.ToEmail.Size = new System.Drawing.Size(269, 28);
             this.ToEmail.TabIndex = 0;
-            this.ToEmail.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+
             // 
             // SubjectLine
             // 
             this.SubjectLine.Location = new System.Drawing.Point(165, 168);
             this.SubjectLine.Multiline = true;
             this.SubjectLine.Name = "SubjectLine";
-            this.SubjectLine.Size = new System.Drawing.Size(309, 27);
+            this.SubjectLine.Size = new System.Drawing.Size(387, 27);
             this.SubjectLine.TabIndex = 2;
-            this.SubjectLine.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+
             // 
             // EmailBody
             // 
             this.EmailBody.Location = new System.Drawing.Point(165, 214);
             this.EmailBody.Multiline = true;
             this.EmailBody.Name = "EmailBody";
-            this.EmailBody.Size = new System.Drawing.Size(309, 154);
+            this.EmailBody.Size = new System.Drawing.Size(387, 154);
             this.EmailBody.TabIndex = 3;
-            this.EmailBody.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+
             // 
             // FromEmail
             // 
             this.FromEmail.Location = new System.Drawing.Point(165, 117);
             this.FromEmail.Multiline = true;
             this.FromEmail.Name = "FromEmail";
-            this.FromEmail.Size = new System.Drawing.Size(197, 28);
+            this.FromEmail.Size = new System.Drawing.Size(269, 28);
             this.FromEmail.TabIndex = 4;
-            this.FromEmail.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+
             // 
             // label1
             // 
@@ -122,11 +123,20 @@ namespace smtpmailLab
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // EmailReporter
+            // 
+            this.EmailReporter.AutoSize = true;
+            this.EmailReporter.Location = new System.Drawing.Point(50, 440);
+            this.EmailReporter.Name = "EmailReporter";
+            this.EmailReporter.Size = new System.Drawing.Size(0, 20);
+            this.EmailReporter.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 450);
+            this.ClientSize = new System.Drawing.Size(593, 492);
+            this.Controls.Add(this.EmailReporter);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -155,6 +165,7 @@ namespace smtpmailLab
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label EmailReporter;
     }
 }
 
