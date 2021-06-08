@@ -36,7 +36,6 @@ namespace SMTP_Email_Lab
             this.username = username;
             this.EmailReporter = EmailReporter;
 
-            //MessageBox.Show(username);
         }
 
         private void send_Email(String Form_from, String Form_to, String Form_subject, String Form_body, String username, String password)
@@ -72,96 +71,35 @@ namespace SMTP_Email_Lab
                     }
                 }
             }
-            //try
-            //{
-            //    // Create a new message with the details
-            //    MailMessage msg = new MailMessage();
-            //    msg.From = new MailAddress(Form_from);
-            //    msg.To.Add(Form_to);
-            //    msg.Subject = Form_subject;
-            //    msg.Body = Form_body;
-
-            //    SmtpClient smt = new SmtpClient("mansci-445.uwaterloo.ca", 587);
-            //    smt.EnableSsl = false;
-
-            //    var ntcd = new NetworkCredential(username, password);
-            //    //ntcd.UserName = username;
-            //    //ntcd.Password = password;
-
-            //    smt.UseDefaultCredentials = false;
-                
-            //    smt.Credentials = ntcd;
-            //    smt.Send(msg);
-
-            //    EmailReporter.ForeColor = Color.Green;
-            //    EmailReporter.Text = "Your Mail is sent!";
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine(ex.ToString());
-            //    EmailReporter.ForeColor = Color.Red;
-            //    EmailReporter.Text = "Unable to send your email!";
-            //}
-        }
-            
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            //MessageBox.Show(password);
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-            // MessageBox.Show(password);
         }
 
-
-        private void Form2_Load_1(object sender, EventArgs e)
-        {
-            textBox2.PasswordChar = '*';
-        }
-
-        //private void textBox1_TextChanged(object sender, EventArgs e)
-        //{
-
-        //}
-
-        private void button4_click(object sender, EventArgs e)
-        {
-            
-        }
-
-        //private void textBox2_TextChanged(object sender, EventArgs e)
-        //{
-
-        //}
-
+        // This submits the details of the password and sends the email.
         private void button3_Click(object sender, EventArgs e)
         {
-            this.password = textBox2.Text;
+            this.password = Password_Textbox.Text;
 
-            send_Email(this.from, this.to, this.subject, this.body, this.username, this.password);
-            this.Close();
-
+            if (!String.IsNullOrEmpty(this.password))
+            {
+                send_Email(this.from, this.to, this.subject, this.body, this.username, this.password);
+                this.Close();
+            }
+            else
+            {
+                Password_Response.ForeColor = Color.Red;
+                Password_Response.Text = "Password cannot be null or empty";
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            this.password = "MSCI445-Lab4-smtp-Cancelled";
-
-            this.Close();
-
-        }
-
+        // This closes the password form.
         private void button4_Click_1(object sender, EventArgs e)
         {
             Close();
         }
 
+        // Makes the written password hidden.
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            textBox2.PasswordChar = '*';
+            Password_Textbox.PasswordChar = '*';
         }
     }
 }
